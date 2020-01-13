@@ -10,23 +10,6 @@
 
 <body>
 
-    <!-- Альтернативная запись условного оператора -->
-
-    <?php $a = 5;
-    if ($a == 5) { ?>
-        A is equal to 5
-    <?php } ?>
-
-    </br>
-
-    <?php $a = 5;
-    if ($a == 5) : ?>
-        A is equal to 5
-    <?php endif; ?>
-
-    </br>
-    </br>
-
     <?php
 
     // Циклы
@@ -177,6 +160,16 @@
     // include "third.php";
 
     // echo $color . " " .  $fruit;
+
+    // $array = array(
+    //     "name1" => "Andy", 
+    //     "name2" => "Denis", 
+    //     "name3" => "Alex", 
+    //     "name4" => "Max"
+    // );
+
+    // echo $array["name2"] . " and " . $array["name4"];
+
 
 
     ?>
