@@ -11,15 +11,30 @@
 <body>
     <?php
 
-        $money = 2000;
-        $intYear = 11.5;
-        $month = 14;
+    $money = 2000;
+    $intYear = 11.5;
+    $month = 14;
 
-        for ($i= 1; $i <= $month ; $i++) { 
-            $money = $money + ($money * ($intYear / 12 / 100));
-        }
+    // for ($i= 1; $i <= $month; $i++) {
+    //     $money = $money + ($money * ($intYear / 12 / 100));
+    // }
 
-        echo $money;
+    // echo $money;
+
+    // $i = 1;
+    // while ($i <= $month) {
+    //     $money = $money + ($money * ($intYear / 12 / 100));
+    //     $i++;
+    // }
+    // echo $money;
+
+    $i = 1;
+    do {
+        $money = $money + ($money * ($intYear / 12 / 100));
+        $i++;
+    } while ($i <= $month);
+
+    echo $money;
 
     ?>
 </body>
