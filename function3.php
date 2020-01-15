@@ -34,23 +34,55 @@
 
     // print_r(mul($input));
 
-    $a = 9;
-    $b = 54;
-    $c = 37;
-    $d = 67;
+    // $a = 9;
+    // $b = 54;
+    // $c = 84;
+    
+
+    // function number($a, $b, $c)
+    // {
+    //     if ($a > $b) {
+    //         $max = $a;
+    //     } 
+    //     else {
+    //         $max = $b;
+            
+    //     }
+
+    //     if ($c > $max) {
+    //         $max = $c;
+    //     }
+    
+    //     return $max;
+    // }
+
+    // echo number($a, $b, $c);
+
+    $a = 401;
+    $b = 58;
+    $c = 12;
+    $d = 9;
+    
 
     function number($a, $b, $c, $d)
     {
         if ($a > $b) {
             $max = $a;
-            $max1 = $b;
-        } else {
-            if ($c > $d){
-            $max = $c;
-            $max2 = $d;
+        } 
+        else {
+            if ($b> $c) {
+            $max = $b;
             }
 
-    }
+            else {
+                $max = $c;
+            }
+        }
+
+        if ($d > $max) {
+            $max = $d;
+        }
+    
         return $max;
     }
 
