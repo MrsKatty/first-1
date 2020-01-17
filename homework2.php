@@ -11,12 +11,11 @@
 <body>
     <?php
         $array = array(10, 21, 32, 44, 65, 26);
-        $max = null;
 
-        function numb($array, $max) {
-
-            for ($i=0; $i <= count($array) ; $i++) { 
-                if ($array[$i] > $max || $max === null) {
+        function numb($array) {
+            $max = $array[0];
+            for ($i=1; $i <= count($array) ; $i++) {
+                if ($array[$i] > $max ) {
                     $max = $array[$i];
                 }
             }
@@ -24,7 +23,7 @@
             return $max;
         }
 
-        echo numb($array, $max);
+        echo numb($array);
     ?>
 </body>
 
