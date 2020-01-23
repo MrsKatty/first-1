@@ -22,7 +22,11 @@
     // echo $contents;
 
 
+
+
     // rename("file1.txt", "file2.txt");
+
+
 
     // if (is_file("file.txt")) {
     //     echo "Это файл";
@@ -48,7 +52,7 @@
     // copy("file5.txt", "file6.txt");
     // unlink("file5.txt");
 
-    // print_r(file("file2.txt")); //преобразовывает содержимое файлп в массив
+    // print_r(file("file2.txt")); //преобразовывает содержимое файла в массив
 
         // header("Content-Type: text/plain");
         // $html = file("https://www.php.net/manual/ru/function.fopen.php");
@@ -56,7 +60,7 @@
         //     echo $key. "|" . $value;
         // }
 
-        readfile("file2.txt");
+        // readfile("file2.txt");
 
 
 ?>

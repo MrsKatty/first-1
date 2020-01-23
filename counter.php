@@ -8,10 +8,19 @@
 </head>
 <body>
     <?php
-    $a = fopen ("counter.txt", "w+");
-    $b = $a + 1;
-    fwrite ($a, $b);
+    $a = file ("counter.txt");
+    $a[0] = $a[0] + 1;
+    $c = fopen("counter.txt", "w+");
+    fwrite($c, $a[0]);
+    readfile("counter.txt");
 
+
+
+    //Сбрасываем счетчик на 0
+
+    $fp = fopen ("counter.txt", "w+");
+    fwrite ($fp, 0);
+    fclose($fp);
 
     ?>
 </body>
