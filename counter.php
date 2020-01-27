@@ -33,6 +33,8 @@
     // echo $c++;
     // file_put_contents("counter.txt", $c);
 
+    
+
     echo $a = file_get_contents("counter.txt") + 1;
     file_put_contents("counter.txt", $a);
 

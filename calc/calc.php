@@ -11,8 +11,14 @@
 
 // print_r($_POST);
 
+// echo $_POST['num1']*$_POST['num2'];
 
-echo $_POST['num1']*$_POST['num2'];
+$sum = $_POST['num1']*$_POST['num2'];
+echo $sum;
+$result = $_POST['num1']."*".$_POST['num2']."=".$sum."\n";
+$f = file_get_contents("calc.txt");
+file_put_contents("calc.txt", $result, FILE_APPEND);
+
 
 
 ?>
