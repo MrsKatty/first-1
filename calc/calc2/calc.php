@@ -16,7 +16,7 @@
     // echo $_POST['num1']*$_POST['num2'];
     $a = $_POST['num1'];
     $b = $_POST['num2'];
-
+    $s = $_POST['s'];
     switch ($_POST['s']) {
         case '-':
             $c = $a - $b;
@@ -32,9 +32,8 @@
             $c = $a + $b;
             break;
     }
-    $str = "$c". "\n";
-    echo $str;
-    file_put_contents("calc.txt", $str, FILE_APPEND);
+    echo $result = "$a $s $b = $c\n";
+    file_put_contents("calc.txt", $result, FILE_APPEND);
 
     ?>
 </body>
