@@ -10,19 +10,10 @@
 
 <body>
     <?php
-        $result = explode(";","opros.txt");
-        switch ($_POST['voting']) {
-             case 'yes':
-                $result[0] = $result[0] + 1;
-                 break;
-             case 'non':
-                $result[1] = $result[1] + 1;
-                break;
-             case 'dknow':
-                $result[2] = $result[2] + 1;
-                 break;
-        $ok = implode(";",$result);
-        file_put_contents("calc.txt", $ok);
+        $a = $_POST['voting'];
+        $arr = explode(";", file_get_contents("counter.csv"));
+        $arr[$a]++;
+        file_put_contents("counter.csv", implode(";", $arr));
     ?>
 </body>
 
