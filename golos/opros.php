@@ -14,6 +14,10 @@
         $arr = explode(";", file_get_contents("counter.csv"));
         $arr[$a]++;
         file_put_contents("counter.csv", implode(";", $arr));
+
+        foreach ($arr as $key => $value) {
+            echo "$key - $value<br>";
+        }
     ?>
 </body>
 
