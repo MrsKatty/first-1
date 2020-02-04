@@ -12,15 +12,18 @@
 
 <body>
     <?php
+
+    // получаем результат из формы, разбиваем файл csv на элементы массива и
+    // прибавляем к соотв. результату 1 для увеличения голоса
+
+    include('config.php');
+    $arr = file($file_name);
     $ind = $_POST['vot'];
-    $arr = file("file.csv");
     $buf =  explode(" - ", $arr[$ind]);
     $buf[1] += 1;
     $arr[$ind] = implode(" - ", $buf) . "\n";
-    file_put_contents("file.csv", $arr);
+    file_put_contents($file_name, $arr);
     ?>
-
-    <!-- <div style="width: 0cm"></div> -->
 
     <?
     //Находим сумму голосов
@@ -33,13 +36,15 @@
         <div class="main">
 
             <h1><?= $arr[0] ?></h1>
-            <div class="answers">
-                <?
 
+            <div class="answers">
+
+                <?
+                // Вывод результата в процентах
                 for ($i = 1; $i < count($arr); $i++) {
                     $buf = explode(" - ", $arr[$i]);
-                    echo "<div class=\"line\" style=\"width: ".($buf[1] / $sum * 100)."px\"></div>" . "<br>" . $buf[0] . " - " . round(($buf[1] / $sum * 100), 2) . "% " . "<br>";
-                    echo "<img src=\"1px.png\" height=\"10\" width=".($buf[1] / $sum * 100).">". "<br>";
+                    $result = round(($buf[1] / $sum * 100), 2);
+                    echo "<div class='line' style='width: {$result}px'></div><br> $buf[0] - $result %<br>";
                 }
 
                 ?>

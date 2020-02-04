@@ -15,7 +15,8 @@
 
 
             <?php
-            $arr = file("file.csv");
+            include('config.php');
+            $arr = file($file_name);
             ?>
 
             <h1><?= $arr[0] ?></h1>
@@ -23,7 +24,7 @@
                 <?
                 for ($i = 1; $i < count($arr); $i++) {
                     $buf =  explode(" - ", $arr[$i])[0];
-                    echo "<div class=\"radio\"><lable><input type='radio' name='vot' value='$i'>$buf</lable><br>\n</div>";
+                    echo "<div class='radio'><lable><input type='radio' name='vot' value='$i'>$buf</lable><br>\n</div>";
                 }
 
                 ?>
