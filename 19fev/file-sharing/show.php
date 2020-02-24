@@ -19,5 +19,5 @@ $arr = scandir("file");
 
     echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>$arr[$i]</a>$filesize
     <a href='delete.php?file=$arr[$i]'><img src='img/cross.jpg' width='16' height='16'></a>
-    <a href='rename-form.php?file=$arr[$i]'><img src='img/rename.png' width='16' height='16'></a><br> ";
+    <a href='rename-form.php?rename=$arr[$i]'><img src='img/rename.png' width='16' height='16'></a><br> ";
  }

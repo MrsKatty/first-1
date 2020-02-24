@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php 
-    file_put_contents("rename.txt", $_GET);
+    file_put_contents("rename.txt", $_GET["rename"]);
 ?>
     <form action="rename.php" method="post">
         <p>Введите новое имя файла</p>
