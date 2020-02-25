@@ -17,7 +17,14 @@ $arr = scandir("file");
     }
     $filesize = round(((filesize("file\\$arr[$i]")) / 1024)  / 1024 , 3) . " Mb";
 
-    echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>$arr[$i]</a>$filesize
-    <a href='delete.php?file=$arr[$i]'><img src='img/cross.jpg' width='16' height='16'></a>
-    <a href='rename-form.php?rename=$arr[$i]'><img src='img/rename.png' width='16' height='16'></a><br> ";
+    echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>
+    $arr[$i]</a>$filesize<a href='delete.php?file=$arr[$i]'>
+    <img src='img/cross.jpg' width='16' height='16'></a>
+    <a href='rename-form.php?rename=$arr[$i]'>
+    <img src='img/rename.png' width='16' height='16'></a>
+    <a href='text.php?old_text=$arr[$i]'>
+    <img src='img/text.jpg' width='16' height='16'></a>
+    <a href='view.php?view=$arr[$i]'>
+    <img src='img/show.png' width='16' height='16'></a><br> ";
+
  }

@@ -7,14 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-<?php 
-    file_put_contents("rename.txt", $_GET["rename"]);
-?>
     <form action="rename.php" method="post">
         <p>Введите новое имя файла</p>
         <input type="text" name="rename">
         <input type="submit" value="Переименовать">
+        <input type="hidden" name="old_name" value="<?=$_GET['rename']?>">
     </form>
-
 </body>
 </html>

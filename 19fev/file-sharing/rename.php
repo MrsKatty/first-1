@@ -1,6 +1,6 @@
 <?php
 
-$old_name = file_get_contents("rename.txt");
+$old_name = $_POST['old_name'];
 $arr_old_name = explode(".", $old_name);
 
 $arr_new_name = [$_POST["rename"], $arr_old_name[1]];
