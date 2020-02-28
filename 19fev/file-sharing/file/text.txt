@@ -1,5 +1,0 @@
-   <form action="download.php" enctype="multipart/form-data" method="post">
-        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-        <input type="file" name="userfile"><br>
-        <input class="btn btn-primary" type="submit" value="send">
-    </form>
