@@ -7,6 +7,6 @@
     // echo "<br>";
 
 
-    echo url("dfgdgdg https://pngicon.ru/file/uploads/ljagushonok-pepe.png lkjhkjuh");
+    echo url("https://pngicon.ru/file/uploads/ljagushonok-pepe.png");
     echo "<br>";
     echo url("https://wooordhunt.ru/word/word");
