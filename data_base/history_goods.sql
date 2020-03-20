@@ -69,6 +69,7 @@ from football_players
 where dep like '_____';
 
 
+
 --Функции Агрегироввания - вычисляют групповые характеристики полей таблицы
 --COUNT определяет количество строк или значений поля, выбранных посредством запроса и не являющихся NULL-значениями;
 --SUM вычисляет сумму всех выбранных значений данного поля;
@@ -82,6 +83,7 @@ select count(name)
 from football_players;
 
 
+
 --удалил зарплату у Кришттиану
 update football_players
 set salary=NULL
@@ -89,6 +91,8 @@ where name='Криштиану';
 
 select count(salary)
 from football_players;
+
+
 
 --Считает количество всех строк в таблице, не зависимо от того есть ли где-нибудь значение NULL
 select count(*)
@@ -102,11 +106,14 @@ where salary>(select AVG(salary)
               from football_players);
 
 
+
+
 --Найти работника с самой большой зарплатой
 select *
 from football_players
 where salary=(select max(salary)
               from football_players);
+
 
 
 --Найти работника с самой маленькой зарплатой
@@ -115,6 +122,8 @@ from football_players
 where salary=(select min(salary)
               from football_players);
 
+
+
 --Вывести информацию о сотрудниках, имеющих зп больше средней зп среди защитников
 
 select *
@@ -122,3 +131,27 @@ from football_players
 where salary>(select AVG(salary)
               from football_players
               where dep='защит');
+
+
+
+
+--Вывести всех футболистов, у которых вторая буква в имени  Е
+
+select *
+from football_players
+where name like '_е%';
+
+
+--найти всех у кого последние две буквы в фамилии НУ (В случае записи ФИО типа Петров П.П.)
+
+select *
+from football_players
+where name like '%ну %' or name like '%ну';
+
+
+--Группировка по
+-- При группировке все записи в таблице разбиваются на группы с одиноаковым значением в том поле по которому производится групировка. В выводе запроса могут использоваться только те поля, по которым произволится группировка. По остальным полям могут выводиться их групповые характеристики: минимум, максимум, среднее и т.д.
+
+select dep, AVG(salary)
+from football_players
+group by dep;
