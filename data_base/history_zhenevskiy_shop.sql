@@ -102,3 +102,52 @@ select sname as "Имя", COUNT(*) as "количество заказов", SUM
 from sales_people, orders
 where sales_people.snum = orders.snum
 group by sname
+
+
+-- найти фамилию продавца из лондона с самыми маленькими коммисионными
+
+select sname
+from sales_people
+where city = "London" AND comm = (select MIN(comm) from sales_people where city = "London");
+
+-- найти средний рейтинг покупателей в каждом городе
+
+select AVG(rating), city
+from customers
+GROUP BY city;
+
+-- объеденить все таблицы в одну
+
+select *
+from sales_people, orders, customers
+where sales_people.snum = orders.snum AND customers.cnum = orders.cnum
+
+-- посчетиать средний рейтинг покупателей для каждого продавца
+
+SELECT
+    sname,
+    AVG(rating)
+FROM
+    sales_people,
+    orders,
+    customers
+WHERE
+    sales_people.snum = orders.snum
+    AND
+    customers.cnum = orders.cnum
+GROUP BY
+    sname
+
+
+-- найти среднюю сумму заказов для каждого продавца на каждую дату
+
+select sname, odate, AVG(AMT), count(AMT)
+from sales_people, orders
+where sales_people.snum = orders.snum
+GROUP BY sname, odate;
+
+-- среднюю сумму заказов на кождое число
+
+select odate, round(AVG(AMT), 2)
+from orders
+GROUP BY odate;
