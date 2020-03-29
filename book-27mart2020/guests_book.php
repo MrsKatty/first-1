@@ -20,7 +20,7 @@
 
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
         echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
+        echo "<td>" . "<a href='#'>" . $row[0] . "</a>" . "</td>";
         echo "<td>" . $row[1] . "</td>";
         echo "<td>" . $row[2] . "</td>";
         echo "</tr>";
@@ -37,7 +37,6 @@
         <input type="text" name="name"><br>
         <input type="submit" value="ok">
     </form>
-
 </body>
 
 </html>
