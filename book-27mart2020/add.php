@@ -9,4 +9,5 @@ if (!empty($_POST['text']) && !empty($_POST['name'])) {
     );
 }
 mysqli_close($link);
+
 header('Location: guests_book.php');
