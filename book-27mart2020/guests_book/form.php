@@ -29,11 +29,11 @@
 
     include('connect_mysql.php');
 
-    $query = mysqli_query($link, "SELECT * FROM TABLE1");
+    $result = mysqli_query($link, "SELECT * FROM TABLE1");
 
     echo "<table>";
 
-    while ($arr = mysqli_fetch_array($query, MYSQLI_NUM)) {
+    while ($arr = mysqli_fetch_array($result, MYSQLI_NUM)) {
         echo "<tr>";
         echo "<td>" . "<a href='delete.php?id=$arr[0]'>" . $arr[0] ."</a>" . "</td>";
         echo "<td>" . $arr[1] . "</td>";
