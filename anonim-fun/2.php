@@ -7,3 +7,4 @@ function fun($name) {
 fun(function() {
     echo "hello";
 });
+
