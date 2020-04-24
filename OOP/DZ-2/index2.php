@@ -42,23 +42,37 @@ echo $ol
 $select = new Select();
 
 echo $select
-->setId('id1')
-->setName('select')
-->setInnerData([1,2,3])
-->html();
+    ->setId('id1')
+    ->setName('select')
+    ->setInnerData([
+        "mul" => "*",
+        "div" => "/",
+        "plus" => "+",
+        "minus" => "-"
+    ])
+    ->html();
 
 $form = new Form();
 
 echo $form
-->setContent('отправить')
-->setAction('1.php')
-->setMethod('POST')
-->setCols(30)
-->setRows(10)
-->setFormData([
-    'text'=>'input',
-    'radio'=>'input',
-    'password'=>'input',
-    'textarea', 
-    'submit'=>'button'])
-->html();
+    ->setAction('1.php')
+    ->setContent((new Input())->setValue('Admin')->html() .
+            (new Input())->setType('password')->setValue('123')->html() .
+            (new Input())->setType('submit')->setValue('okey')->html()
+    )
+    ->html();
+
+echo $form
+    ->setAction('1.php')
+    ->setContent((new Input())->setValue(12)->html())
+    ->addContent((new Select())
+        ->setInnerData([
+            "mul" => "*",
+            "div" => "/",
+            "plus" => "+",
+            "minus" => "-"
+        ])
+        ->html())
+    ->addContent((new Input())->setValue(12)->html())
+    ->addContent((new Input())->setType('submit')->setValue('okey')->html())
+    ->html();

@@ -9,8 +9,8 @@ class Select extends Tag
     {
         $this->selectData = "";
 
-        for ($i=0; $i < count($selectData); $i++) { 
-            $this->selectData .= "\t<option value='$i'>$selectData[$i]</option>\n";
+        foreach ($selectData as $key => $value) {
+            $this->selectData .= "\t<option value='$key'>$value</option>\n";
         }
 
         return $this;
