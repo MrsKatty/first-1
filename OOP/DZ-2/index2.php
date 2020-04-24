@@ -50,6 +50,7 @@ echo $select
 $form = new Form();
 
 echo $form
+->setContent('отправить')
 ->setAction('1.php')
 ->setMethod('POST')
 ->setCols(30)

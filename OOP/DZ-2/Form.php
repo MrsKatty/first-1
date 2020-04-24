@@ -6,9 +6,15 @@ class Form extends Tag {
     private $formData;
     private $cols;
     private $rows;
+    private $content;
 
     public function setAction($action) {
         $this->action = $action;
+        return $this;
+    }
+
+    public function setContent($content) {
+        $this->content = $content;
         return $this;
     }
 
@@ -36,7 +42,7 @@ class Form extends Tag {
                 if ($value == "textarea") {
                     $this->formData .= "\t<$value type='$key' cols='$this->cols' rows='$this->rows'></$value>\n";
                 } else {
-                    $this->formData .= "\t<$value type='$key'></$value>\n";
+                    $this->formData .= "\t<$value type='$key'>$this->content</$value>\n";
                 }
                 
             }else {
