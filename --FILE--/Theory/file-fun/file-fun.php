@@ -52,7 +52,7 @@
     // copy("file5.txt", "file6.txt");
     // unlink("file5.txt");
 
-    // print_r(file("file2.txt")); //преобразовывает содержимое файла в массив
+    // file("file2.txt"); //преобразовывает содержимое файла в массив
 
         // header("Content-Type: text/plain");
         // $html = file("https://www.php.net/manual/ru/function.fopen.php");

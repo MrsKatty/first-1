@@ -11,9 +11,6 @@
 <body>
     <?php
 
-    // print_r($_POST);
-
-    // echo $_POST['num1']*$_POST['num2'];
     $a = $_POST['num1'];
     $b = $_POST['num2'];
 

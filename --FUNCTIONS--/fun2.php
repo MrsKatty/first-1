@@ -12,25 +12,18 @@
 
     <?php
 
-    // function foo()
+    function foo()
 
-    // {
+    {
 
-    //     function bar()
-    //     {
-    //         echo "asd";
-    //     }
-    // }
+        function bar()
+        {
+            echo "asd";
+        }
+    }
 
-    //  foo();
-    //  bar();
-
-
-
-
-
-
-
+    foo();
+    bar();
 
     ?>
 
