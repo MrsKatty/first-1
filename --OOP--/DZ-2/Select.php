@@ -1,9 +1,8 @@
 <?php
 
-class Select extends PairTag
+class Select extends Name
 {
     private $selectData;
-    private $name;
 
     public function setInnerData(array $selectData)
     {
@@ -15,13 +14,6 @@ class Select extends PairTag
 
         return $this;
     }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
-
 
     public function html()
     {

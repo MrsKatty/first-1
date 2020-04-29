@@ -56,16 +56,19 @@ $form = new Form();
 
 echo $form
     ->setAction('1.php')
-    ->setContent((new Input())->setValue('Admin')->html() .
-            (new Input())->setType('password')->setValue('123')->html() .
+    ->setContent((new Input())->setName('name')->setValue('Admin')->html() .
+            (new Input())->setType('password')->setName('pass')->setValue('123')->html() .
             (new Input())->setType('submit')->setValue('okey')->html()
     )
     ->html();
 
+
+    
+
 echo $form
     ->setAction('1.php')
-    ->setContent((new Input())->setValue(12)->html())
-    ->addContent((new Select())
+    ->setContent((new Input())->setName('num1')->setValue(12)->html())
+    ->addContent((new Select())->setName('op')
         ->setInnerData([
             "mul" => "*",
             "div" => "/",
@@ -73,6 +76,63 @@ echo $form
             "minus" => "-"
         ])
         ->html())
-    ->addContent((new Input())->setValue(12)->html())
+    ->addContent((new Input())->setName('num2')->setValue(12)->html())
     ->addContent((new Input())->setType('submit')->setValue('okey')->html())
     ->html();
+
+    echo "<br>";
+
+$button = new Button();
+
+echo $button
+    ->setName("button")
+    ->settype('submit')
+    ->setInnerText('ok')
+    ->html();
+
+echo "<br>";
+
+$textarea= new TextArea();
+
+echo $textarea
+    ->setName('textarea')
+    ->setId('123')
+    ->setClass('class')
+    ->setStyle('style')
+    ->setColl(20)
+    ->setRow(20)
+    ->html();
+
+$hr = new Hr();
+
+echo $hr
+    ->setColor('red')
+    ->setSize(5)
+    ->setWidth(500)
+    ->html();
+
+
+$br = new Br();
+
+echo $br
+    ->html();
+
+$img = new Img();
+
+echo $img
+    ->setSrc('1.jpg')
+    ->setHeight(200)
+    ->setWidth(200)
+    ->setAlt('image')
+    ->setBorder(1)
+    ->html();
+
+echo $br->html();
+
+$h = new H();
+ echo $h->setLevel(1)
+ ->setId('123')
+ ->setClass('header')
+ ->setStyle('qwerty')
+ ->setInnerText('header')
+ ->html();
