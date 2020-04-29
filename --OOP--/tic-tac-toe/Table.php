@@ -2,9 +2,7 @@
 class Table
 {
     protected $table;
-    //protected $style;
     protected $data;
-
     protected $border;
     protected $width;
     protected $height;
