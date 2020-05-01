@@ -1,12 +1,13 @@
 <?php
 
-class Img extends Hr
+class Img extends Tag
 {
 
     private $src;
     private $height;
     private $alt;
     private $border;
+    private $width;
 
     public function setSrc(string $src)
     {
@@ -16,31 +17,32 @@ class Img extends Hr
 
     public function setHeight(int $height)
     {
-        $this->height = $height;
+
+        $this->height = " height='$height'";
         return $this;
     }
 
     public function setAlt(string $alt)
     {
-        $this->alt = $alt;
+        $this->alt = " alt='$alt'";
         return $this;
     }
 
     public function setBorder(int $border)
     {
-        $this->border = $border;
+        $this->border = " border='$border'";
         return $this;
     }
 
     public function setWidth(int $width)
     {
-        $this->width = $width;
+        $this->width = " width='$width'";
         return $this;
     }
 
     public function html()
     {
-        return "<img src='$this->src' alt='$this->alt' 
-        height='$this->height' width='$this->width' border='$this->border'>";
+        return "<img src='$this->src'$this->alt" .
+            "$this->height$this->width$this->border>";
     }
 }

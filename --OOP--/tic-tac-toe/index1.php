@@ -3,9 +3,9 @@ include 'autoload.php';
 
 $tic = new Tictac(3);
 
-$tic->putCross(2, 2);
+$tic->putCross(0, 2);
 
-$tic->putRand(2);
+$tic->putRand(3);
 
 // $tic->putNull(1, 1);
 
