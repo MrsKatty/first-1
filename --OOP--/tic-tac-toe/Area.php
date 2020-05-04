@@ -10,12 +10,6 @@ class Area
         return $this;
     }
 
-    // public function style(string $style): self
-    // {
-    //     $this->style = " style='$style'";
-    //     return $this;
-    // }
-
     public function style(string $border, string $width, string $height): self
     {
         $this->border = $border;
