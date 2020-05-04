@@ -11,7 +11,7 @@ class Img extends Tag
 
     public function setSrc(string $src)
     {
-        $this->src = $src;
+        $this->src = " src='$src'";
         return $this;
     }
 
@@ -42,7 +42,7 @@ class Img extends Tag
 
     public function html()
     {
-        return "<img src='$this->src'$this->alt" .
+        return "<img$this->src$this->alt" .
             "$this->height$this->width$this->border>";
     }
 }

@@ -3,15 +3,17 @@ include 'autoload.php';
 
 $tic = new Tictac(3);
 
-$tic->putCross(0, 2);
+// $tic->putCross(0, 0);
 
-$tic->putRand(3);
+// $tic->putNull(1, 0);
 
-// $tic->putNull(1, 1);
+$rand = new Random();
 
-$table = new Table();
+$rand->putRandCross();
 
-echo $table
+$area = new Area();
+
+echo $area
     ->style('1px solid black', '100px', '100px')
-    ->data($tic->map)
+    ->setMap($tic->map)
     ->html();
