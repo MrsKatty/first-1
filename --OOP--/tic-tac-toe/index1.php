@@ -1,18 +1,15 @@
 <?php
 include 'autoload.php';
 
-//$tic = new Tictac(3);
+$tic = new Tictac(3);
 
 $tic->putCross(0, 0);
+$tic->putNull(1, 0);
 
+$rand = new Random();
 
-
-//$tic->putNull(1, 0);
-
-//$rand = new Random();
-
-//$tic->putRandCross();
-//$tic->putRandNull();
+$rand->putRandCross();
+$rand->putRandNull();
 
 $area = new Area();
 
