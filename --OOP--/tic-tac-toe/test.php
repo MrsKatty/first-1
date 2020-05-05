@@ -11,7 +11,7 @@ function test($str1, $str2, $text = '')
     }
 }
 
-$tictac = new Tictac();
+$tictac = new Ai();
 
 // test(
 //     [[null, null, null], [null, null, null], [null, null, null]],
@@ -68,8 +68,111 @@ $tictac = new Tictac();
 // );
 
 
+
 test(
-    null,
-    $tictac->initMap(3)->putNull(0, 1)->putCross(0, 2)->putCross(0, 1)->putCross(2, 0)->putNull(2, 2)->checWin(),
+    1,
+    $tictac->setMap([
+        [0, 0, 1],
+        [1, 1, 0],
+        [1, 1, 0]
+    ])->checWin(),
     "Tictac"
 );
+
+test(
+    1,
+    $tictac->setMap([
+        [1, 0, 1],
+        [0, 1, 0],
+        [0, 0, 1]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    1,
+    $tictac->setMap([
+        [0, 0, 1],
+        [1, 0, 0],
+        [1, 1, 1]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    1,
+    $tictac->setMap([
+        [1, 0, 1],
+        [1, 0, 0],
+        [1, 1, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    0,
+    $tictac->setMap([
+        [0, 0, 0],
+        [1, 0, 1],
+        [1, 1, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    0,
+    $tictac->setMap([
+        [0, 1, 0],
+        [1, 0, 0],
+        [1, 1, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    0,
+    $tictac->setMap([
+        [1, 0, 0],
+        [1, 0, 1],
+        [0, 1, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    0,
+    $tictac->setMap([
+        [0, 1, 0],
+        [1, 0, 1],
+        [1, 1, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+test(
+    null,
+    $tictac->setMap([
+        [1, 1, 0],
+        [0, 0, 1],
+        [1, 0, 0]
+    ])->checWin(),
+    "Tictac"
+);
+
+print_r($tictac->setMap([
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+])
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->putRandNull()
+->putRandCross()
+->getMap());
+
+echo $tictac->checWin();

@@ -15,6 +15,12 @@ class Tictac
         return $this->map;
     }
 
+    public function setMap(array $map)
+    {
+        $this->map = $map;
+        return $this;
+    }
+
     public function initMap(int $n)
     {
         $this->map = [];
@@ -78,7 +84,7 @@ class Tictac
             return $winner;
         }
 
-        if (($winner = $this->checWinByMainDiag($this->map)) !== null) {
+        if (($winner = $this->checWinByMainDiag()) !== null) {
             return $winner;
         }
 
@@ -94,46 +100,56 @@ class Tictac
     }
 
 
-    public function checWinByMainDiag(array $map)
+    public function checWinByMainDiag()
     {
-        $winner = $map[0][0];
+        $winner = $this->map[0][0];
 
-        for ($i = 0; $i < count($map[$i]); $i++) {
-
-            for ($j = 0; $j < count($map[$i]); $j++) {
-
-                if ($i = $j && $map[$i][$j] !== null) {
-
-                    if ($winner === $map[$i][$j]) {
-                        return $winner;
-                    }
-                }
+        $i = 0;
+        foreach ($this->map as $value) {
+            if ($value[$i++] !== $this->map[0][0]) {
+                $winner = null;
             }
-            return null;
         }
+        return $winner;
+    }
+
+    
+    public function checWinBySecondDiag()
+    {
+        $n = count($this->map)-1;
+        $winner = $this->map[0][$n];
+
+        $i = $n;
+        foreach ($this->map as $value) {
+            if ($value[$i--] !== $this->map[0][$n]) {
+                $winner = null;
+            }
+        }
+        return $winner;
     }
 
 
-    public function checWinBySecondDiag(array $map)
-    {
+    // public function checWinBySecondDiag(array $map)
+    // {
 
-        $winner = $map[0][2];
+    //     $winner = $map[0][2];
 
-        for ($i = 0; $i < count($map[$i]); $i++) {
-            for ($j = 0; $j < count($map[$i]); $j++) {
+    //     for ($i = 0; $i < count($map[$i]); $i++) {
+    //         for ($j = 0; $j < count($map[$i]); $j++) {
 
-                if (($j === (count($map[$i]) - 1) && $i == 0) || 
-                ($i = $j && $map[$i][$j] !== null) || 
-                ($i === (count($map[$i]) - 1) && $j == 0)) {
-                   
-                    if ($winner === $map[$i][$j]) {
-                        return $winner;
-                    }
-                }
-            }
-            return null;
-        }
-    }
+    //             if (($j === (count($map[$i]) - 1) && $i == 0) ||
+    //                 ($i === $j && $map[$i][$j] !== null) ||
+    //                 ($i === (count($map[$i]) - 1) && $j == 0)
+    //             ) {
+
+    //                 if ($winner === $map[$i][$j]) {
+    //                     return $winner;
+    //                 }
+    //             }
+    //         }
+    //         return null;
+    //     }
+    // }
 
     public function available(int $i, int $j): bool
     {
