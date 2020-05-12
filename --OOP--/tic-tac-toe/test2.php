@@ -41,8 +41,7 @@ session_start();
     $ai = new Ai();
 
     $ai->initMap(3)
-        ->putCross($_GET['i'], $_GET['j']);
-
+       ->putCross(1, 1);
 
     // $area = new Area();
 
