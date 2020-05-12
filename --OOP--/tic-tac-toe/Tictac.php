@@ -113,10 +113,10 @@ class Tictac
         return $winner;
     }
 
-    
+
     public function checWinBySecondDiag()
     {
-        $n = count($this->map)-1;
+        $n = count($this->map) - 1;
         $winner = $this->map[0][$n];
 
         $i = $n;
@@ -128,28 +128,10 @@ class Tictac
         return $winner;
     }
 
-
-    // public function checWinBySecondDiag(array $map)
-    // {
-
-    //     $winner = $map[0][2];
-
-    //     for ($i = 0; $i < count($map[$i]); $i++) {
-    //         for ($j = 0; $j < count($map[$i]); $j++) {
-
-    //             if (($j === (count($map[$i]) - 1) && $i == 0) ||
-    //                 ($i === $j && $map[$i][$j] !== null) ||
-    //                 ($i === (count($map[$i]) - 1) && $j == 0)
-    //             ) {
-
-    //                 if ($winner === $map[$i][$j]) {
-    //                     return $winner;
-    //                 }
-    //             }
-    //         }
-    //         return null;
-    //     }
-    // }
+    public function mapSize()
+    {
+        return count($this->map);
+    }
 
     public function available(int $i, int $j): bool
     {
