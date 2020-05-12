@@ -1,0 +1,19 @@
+.tictac td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 25px;
+}
