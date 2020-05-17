@@ -31,6 +31,7 @@ session_start();
             if (!empty($ai->searchEmptyCells()) && $ai->checWin() === null) {
                 $ai->putCross($_GET['i'], $_GET['j']);
             }
+
             $ai->putRandNull();
             break;
         case 'newgame':
