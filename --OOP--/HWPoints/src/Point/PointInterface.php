@@ -2,13 +2,14 @@
 
 namespace Point;
 
-interface PointInterface {
+interface PointInterface
+{
 
-    public function setX(int $x): object;
+    public function setX(int $x): Point;
 
-    public function setY(int $y): object;
+    public function setY(int $y): Point;
 
-    public function getX();
+    public function getX(): int;
 
-    public function getY();
+    public function getY(): int;
 }

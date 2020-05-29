@@ -5,27 +5,27 @@ namespace Point;
 class Point implements PointInterface
 {
 
-    private $x;
-    private $y;
+    protected $x;
+    protected $y;
 
-    public function setX(int $x): object
+    public function setX(int $x): Point
     {
         $this->x = $x;
         return $this;
     }
 
-    public function setY(int $y): object
+    public function setY(int $y): Point
     {
         $this->y = $y;
         return $this;
     }
 
-    public function getX()
+    public function getX(): int
     {
         return $this->x;
     }
 
-    public function getY()
+    public function getY(): int
     {
         return $this->y;
     }

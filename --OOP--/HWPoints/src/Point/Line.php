@@ -4,32 +4,30 @@ namespace Point;
 
 class Line implements LineInterface
 {
-    private $StartX;
-    private $StartY;
-    private $EndX;
-    private $EndY;
+    protected $startPoint;
+    protected $endPoint;
 
-    public function startPoint(int $StartX, int $StartY): object
+    public function setStartPoint(Point $startPoint): Line
     {
-        $this->StartX = $StartX;
-        $this->Starty = $StartY;
+        $this->startPoint = $startPoint;
+
         return $this;
     }
 
 
-    public function endPoint(int $EndX, int $EndY): object
+    public function setEndPoint(Point $endPoint): Line
     {
-        $this->EndX = $EndX;
-        $this->EndY = $EndY;
+        $this->endPoint = $endPoint;
+
         return $this;
     }
 
 
-    public function getLength()
+    public function getLength(): float
     {
-        return sqrt(
-            (($this->EndX - $this->StartX) ** 2) +
-                (($this->EndY - $this->StartY) ** 2)
-        );
+        $a = $this->endPoint->getX() - $this->startPoint->getX();
+        $b = $this->endPoint->getY() - $this->startPoint->getY();
+
+        return sqrt($a ** 2 + $b ** 2);
     }
 }

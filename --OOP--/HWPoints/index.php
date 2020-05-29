@@ -5,15 +5,28 @@ include 'src/autoload.php';
 use Point\Point;
 use Point\Line;
 
-$point = new Point;
-$line = new Line;
+$startPoint = new Point();
+$endPoint = new Point();
 
-echo $line->startPoint(
-    $point->setX(1)->getX(),
-    $point->setY(1)->getY()
-)->endPoint(
-    $point->setX(2)->getX(),
-    $point->setY(1)->getY()
-)->getLength();
+$startPoint
+    ->setX(4)
+    ->setY(7);
+
+$endPoint
+    ->setX(3)
+    ->setY(5);
+
+$line = new Line();
+
+$line
+    ->setStartPoint($startPoint)
+    ->setEndPoint($endPoint);
+    
+$startPoint
+    ->setX(0)
+    ->setY(0);
+
+
+echo $line->getLength();
 
 

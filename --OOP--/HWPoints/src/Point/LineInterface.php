@@ -3,15 +3,14 @@
 namespace Point;
 
 interface LineInterface
-
 {
 
-    public function startPoint(int $StartX, int $StartY):object;
+    public function setStartPoint(Point $startPoint):Line;
   
 
-    public function endPoint(int $EndX, int $EndY):object;
+    public function setEndPoint(Point $endPoint):Line;
    
 
-    public function getLength();
+    public function getLength():float;
   
 }
