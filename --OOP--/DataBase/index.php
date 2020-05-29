@@ -14,8 +14,12 @@ $table = new DbTable(
     "table124"
 );
 
-// print_r($table->get());
+
 
 // echo $table->add(["text" => "Привет", "name" => "Вася"]);
-echo $table->add(["text" => "HELLO", "name" => "Petya"]);
+// echo $table->add(["text" => "hi", "name" => "slava"]);
+// echo $table->add(["text" => "привет", "name" => "Сергей"]);
 // $table->edit(1, ["text" => "Hi", "name" => "Антоша"]);
+$table->del(5);
+
+print_r($table->get());
