@@ -42,6 +42,7 @@ class View
         if (is_array($this->data)) {
             extract($this->data);
         }
+
         include "$this->path$this->template.php";
     }
 }

@@ -1,21 +1,18 @@
 <?php
 
-echo "<table class = 'table'>";
+echo View\Html\Html::create('TableEdited')->data($table)->class('table')->html();
 
-foreach ($table as $row) {
-    echo "<tr>";
-    foreach ($row as $value) {
-        echo "<td>$value</td>";
-    }
-    echo "<td><a href='?action=del&id=$row[id]'>delete</a></td>";
-    echo "</tr>";
-}
+echo View\Html\Html::create('Form')
+    ->setAction('?action=add')
+    ->setClass('form')
+    ->setContent(View\Html\Html::create('Textarea')->setName('text')->html())
+    ->addContent(View\Html\Html::create('Input')->setName('name')->html())
+    ->addContent(View\Html\Html::create('Input')->setType('submit')->setValue('OK')->html())
+    ->html();
 
-echo "</table>";
 ?>
-
-<form action="?action=add" method="POST" class="form">
-    <textarea name="text" id="" cols="30" rows="10"></textarea>
-    <input type="text" name="name" value="name">
-    <input type="submit" value="ok">
-</form>
+<!-- <form method="POST" action="?action=add" class="form">
+    <textarea name='text'></textarea>
+    <input name='name' type="text" value='name'>
+    <input type="submit" value='OK'>
+</form> -->

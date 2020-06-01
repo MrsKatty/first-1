@@ -2,6 +2,7 @@
 
 namespace Core;
 
+
 use Controller\TableController;
 use Model\DbTable;
 use mysqli;
@@ -9,24 +10,22 @@ use View\View;
 
 class Dispatcher
 {
-
     public function __construct()
     {
     }
 
     public function run()
     {
+        include __DIR__ . "/../../config/config.php";
         // ?action=show
         // ?action=add
 
-        include __DIR__ . "/../../config/config.php";
-
-        $view = new View();
+        $view =  new View();
         $view->setLayout('mainLayout');
 
         $controller = new TableController(
             new DbTable(
-                new \mysqli(
+                new mysqli(
                     $config['mysql']['host'],
                     $config['mysql']['user'],
                     $config['mysql']['password'],
@@ -34,21 +33,19 @@ class Dispatcher
                 ),
                 $config['mysql']['table']
             ),
-
             $view
         );
 
         $action = "action" . $_GET["action"];
-
-        $controllerData = $_POST;
+        // echo $_SERVER['REQUEST_URI'];
+        $controllerData = ['post' => $_POST, 'get' => $_GET];
 
         if (method_exists($controller, $action)) {
             $controller->{$action}($controllerData);
-        } else{
+        } else {
             $controller->actionDefault();
         }
-
-        // $controller->actionShow()
-        // $controller->{"actionshow"}();
+        // $controller->actionShow();
+        // $controller->{"actionShow"}();
     }
 }
